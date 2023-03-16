@@ -8,6 +8,7 @@ description = "Curv contains an extremly simple interface to onboard new ellipti
 repository = "https://github.com/ZenGo-X/curv"
 
 [lib]
+name = "curv"
 crate-type = ["lib"]
 
 [dependencies]
@@ -21,22 +22,34 @@ funty = "=1.1.0"
 generic-array = "0.14"
 hex = "0.4"
 hmac = "0.7.1"
-merkle-sha3 = "^0.1"
+num-bigint = { version = "0.4", features = ["serde"], optional = true }
 lazy_static = "1.4.0"
 num-traits = "0.2"
 num-integer = "0.1"
 pairing-plus = "0.19"
-rand = "0.6"
+rand = { version = "0.6.0"}
 ring-algorithm = "0.2.3"
-rust-crypto = "^0.2"
+
 serde = { version = "1.0", features = ["derive"] }
 serde_derive = "1.0"
 sha2 = "0.8.0"
 sha3 = "0.8.2"
-zeroize = "1"
+zeroize = "1.3.0"
 
-rust-gmp-kzen = { version = "0.5", features = ["serde_support"], optional = true }
-num-bigint = { version = "0.4", features = ["serde"], optional = true }
+[dependencies.rust-crypto]
+version = "^0.2"
+optional = true
+
+[dependencies.rust-gmp]
+version = "0.5.0"
+features = ["serde_support"]
+git = "https://github.com/KZen-networks/rust-gmp"
+optional = true
+
+[dependencies.merkle-sha3]
+version = "^0.1"
+optional = true
+
 
 [dependencies.secp256k1]
 version = "0.20"
@@ -54,4 +67,4 @@ proptest = "0.10"
 proptest-derive = "0.2"
 
 [features]
-default = ["rust-gmp-kzen"]
+default = ["rust-gmp"]
