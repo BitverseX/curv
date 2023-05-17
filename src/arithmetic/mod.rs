@@ -31,6 +31,7 @@ pub use big_gmp::BigInt;
 
 #[cfg(feature = "num-bigint")]
 mod big_native;
+mod serde_support;
 #[cfg(feature = "num-bigint")]
 pub use big_native::BigInt;
 

@@ -67,4 +67,5 @@ proptest = "0.10"
 proptest-derive = "0.2"
 
 [features]
-default = ["rust-gmp"]
+rust-gmp-kzen=["rust-gmp"]
+default = ["rust-gmp-kzen"]

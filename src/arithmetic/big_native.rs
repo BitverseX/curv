@@ -18,8 +18,7 @@ mod primes;
 /// very limited API that allows easily switching between implementations.
 ///
 /// Set of traits implemented on BigInt remains the same regardless of underlying implementation.
-#[derive(PartialOrd, PartialEq, Ord, Eq, Clone, Serialize, Deserialize)]
-#[serde(transparent)]
+#[derive(PartialOrd, PartialEq, Ord, Eq, Clone)]
 pub struct BigInt {
     num: BN,
 }
